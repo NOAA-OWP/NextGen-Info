@@ -29,7 +29,7 @@ For more information on making a model NextGen compliant with BMI, please see th
 
 ### Hydrologic models and modules
 
-The initial selection of hydrologic models and modules includes routines for many key hydrologic processes and states, such as: interception of precipitation by vegetation, snow accumulation and melt, evapotranspiration, infiltration-runoff partitioning, overland flow, terrain routing, subsurface lateral flow, groundwater flux, and soil moisture. 
+The initial selection of hydrologic models and modules includes routines for many hydrologic processes and states, such as: interception of precipitation by vegetation, snow accumulation and melt, evapotranspiration, infiltration-runoff partitioning, overland flow, terrain routing, subsurface lateral flow, groundwater flux, and soil moisture. 
 
 The table below indicates the key processes and primary programming language for each of the models and modules OWP has implemented to date. Click on a model's name to go to its source code hosted on GitHub.
 
@@ -71,13 +71,33 @@ Finally, aorc_bmi provides forcing data to several models (e.g., CFE and PET) wh
 | [jinjaBMI](https://github.com/mattw-nws/jinjabmi)   | Variable transformations       | Python      |
 | [aorc_bmi](https://github.com/NOAA-OWP/aorc_bmi)   | Forcing data for standalone models        | C      |
 
-## Forcing engine
+## Forcings Engine
 
+The NextGen Forcings Engine is a set of Python utilities that builds NextGen-compatible forcing files from various meteorological reanalysis and forecast datasets. These include:
 
+- AORC: Analysis of Record for Calibration
+- GFS: Global Forecast System
+- HRRR: High-Resolution Rapid Refresh
+- CFS: Climate Forecast System 
 
-## Hydrofabric
+The Forcings Engine can produce either CSV or NetCDF files on a regular grid or at the catchment scale. For further information, please see the [Forcings Engine repo](https://github.com/NOAA-OWP/ngen-forcing).
+
+## Geospatial data
+
+### Hydrofabric
+
+The hydrofabric is an essential component of every NextGen run. It serves several purposes, such as:
+
+- Delineating the catchment(s) within the simulation domain
+- Defining the topology of the catchments and nexuses to enable fast, accurate streamflow routing via T-Route
+- Providing important basin attributes and parameter value estimates (e.g., land cover category, soil type, basin slope, etc.) that can populate model configuration files
+
+Pre-generated hydrofabric data are publicly accessible online [here](https://www.lynker-spatial.com/data).
 
 https://github.com/NOAA-OWP/hydrofabric
+
+### HARBOR
+
 
 ## Calibration and regionalization
 
