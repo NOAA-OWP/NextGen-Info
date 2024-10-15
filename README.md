@@ -53,7 +53,7 @@ The T-Route routing module converts water flux data (e.g., overland flow, later 
 
 ### Coastal models
 
-To produce total water level forecasts, OWP is adapting two coastal models to work with NextGen: the  [Semi-implicit Cross-scale Hydroscience Integrated System Model (SCHISM)](https://schism-dev.github.io/schism/master/index.html) and [D-Flow Flexible Mesh (FM)](https://www.deltares.nl/en/software-and-data/products/delft3d-fm-suite/modules/d-flow-flexible-mesh). The initial development stages for the coastal model BMIs have been completed and their respective GitHub repositories are stored in the following pathways: SCHISM - [https://github.com/LynkerIntel/SCHISM_BMI](https://github.com/LynkerIntel/SCHISM_BMI)  ; DFlowFM - [https://github.com/LynkerIntel/DFlowFM_BMI](https://github.com/LynkerIntel/DFlowFM_BMI) . Once the NextGen framework evaluation is complete with the SCHISM Total Water Level (TWL) capability, the SCHISM BMI repository will be merged with the SCHISM master repository (https://github.com/schism-dev/schism) in the near future. For the DFlowFM model, it's BMI development is an entire seperate branch of the BMI code that is incompatible with the Deltares DFlowFM master branch and that will remain the case until the DFlowFM EC-module is redeveloped entirely for BMI compatibility. For now, the NOAA DFlowFM BMI development is a frozen DFlowFM version for research and development initiatives under the NextGen project in the future with the TWL capability. 
+To produce total water level forecasts, OWP is adapting two coastal models to work with NextGen: the [Semi-implicit Cross-scale Hydroscience Integrated System Model (SCHISM)](https://schism-dev.github.io/schism/master/index.html) and [D-Flow Flexible Mesh (FM)](https://www.deltares.nl/en/software-and-data/products/delft3d-fm-suite/modules/d-flow-flexible-mesh). The initial development stages for the coastal model BMIs have been completed and their respective GitHub repositories are stored in the following pathways: SCHISM - [https://github.com/LynkerIntel/SCHISM_BMI](https://github.com/LynkerIntel/SCHISM_BMI); DFlowFM - [https://github.com/LynkerIntel/DFlowFM_BMI](https://github.com/LynkerIntel/DFlowFM_BMI). Once the NextGen framework evaluation is complete with the SCHISM Total Water Level (TWL) capability, the SCHISM BMI repository will be merged with the SCHISM master repository (https://github.com/schism-dev/schism) in the near future. For the DFlowFM model, its BMI development is an entire separate branch of the BMI code that is incompatible with the Deltares DFlowFM master branch and that will remain the case until the DFlowFM EC-module is redeveloped entirely for BMI compatibility. For now, the NOAA DFlowFM BMI development is a frozen DFlowFM version for research and development initiatives under the NextGen project in the future with the TWL capability.
 
 ### Other modules
 
@@ -81,15 +81,15 @@ The NextGen Forcings Engine is a set of Python utilities that builds NextGen-com
 - RAP: Rapid Refresh
 - CFS: Climate Forecast System
 - NAM: North American Mesoscale Forecast System
-- WRF-ARW: Weather Research and Foecast Model- Advanced Research
+- WRF-ARW: Weather Research and Forecast Model- Advanced Research
 - MRMS: Multi-Radar/Multi-Sensor System
 - Stage IV: Quantitative Precipitation Estimates
 - NWM: NWM Retrospective Forcing Files
-- NBM: National Blended Models
+- NBM: National Blend of Models
 - NDFD: National Digital Forecast Database
 - ERA5: ERA5-Interim Reanalysis Dataset
 
-The NextGen Forcings Engine BMI can produce a single netcdf forcing file for a regular grid, catchment scale, or an unstructured mesh or act as a forcings provider BMI under the NextGen framework. The NextGen lumped forcings driver can soley produce NextGen eligble forcing netcdf/csv forcing files for a small range of forcing datasets (AORC, GFS, HRRR, CFS) as supplementary tool for the community using a fast regridding method called ExactExtract if desired. More tools in the Forcing Engine repository include pre-processing domain configurations (hydrofabric geopackages, coastal meshes) into ESMF-compliant netcdf files as well as a suite of Python scripts for downloading forcing datasets off the NOMADs operational server. For further information, please see the [Forcings Engine repo](https://github.com/NOAA-OWP/ngen-forcing).
+The NextGen Forcings Engine BMI can produce a single NetCDF forcing file for a regular grid, catchment scale, or an unstructured mesh or act as a forcings provider BMI under the NextGen framework. The NextGen lumped forcings driver can also produce NextGen eligible forcing NetCDF/CSV forcing files for a small range of forcing datasets (AORC, GFS, HRRR, CFS) as supplementary tool for the community using a fast regridding method called ExactExtract if desired. More tools in the Forcing Engine repository include pre-processing domain configurations (hydrofabric geopackages, coastal meshes) into ESMF-compliant NetCDF files as well as a suite of Python scripts for downloading forcing datasets off the NOMADs operational server. For further information, please see the [Forcings Engine repo](https://github.com/NOAA-OWP/ngen-forcing).
 
 ## Geospatial data
 
